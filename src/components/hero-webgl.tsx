@@ -115,7 +115,7 @@ const Scene = () => {
 
 export const Hero3DWebGL = () => {
   const titleWords = "MajesticGuard".split(" ")
-  const subtitle = "Одно нажатие — и вы защищены."
+  const subtitle = "Программа для проверки на читы для MajesticRP"
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)
   const [delays, setDelays] = useState<number[]>([])
