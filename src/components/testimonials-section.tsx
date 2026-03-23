@@ -1,64 +1,36 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-
-const testimonials = [
-  {
-    name: "Алексей Громов",
-    role: "Администратор игрового сервера, DarkRP Community",
-    avatar: "/professional-woman-scientist.png",
-    content:
-      "С MajesticGuard количество жалоб на читеров упало до нуля. Игроки наконец могут наслаждаться честной игрой.",
-  },
-  {
-    name: "Иван Черников",
-    role: "Организатор турниров, ESport Liga",
-    avatar: "/cybersecurity-expert-man.jpg",
-    content:
-      "Использую на всех наших соревнованиях. Ни одного случая читерства за последние 6 месяцев. Лучшая утилита на рынке.",
-  },
-  {
-    name: "Мария Севастьянова",
-    role: "Стример, Twitch Partner",
-    avatar: "/asian-woman-tech-developer.jpg",
-    content:
-      "Наконец-то решение, которое реально работает. Одно нажатие — и можно спокойно играть без страха встретить читера.",
-  },
-]
+import Icon from "@/components/ui/icon"
+import { Button } from "@/components/ui/button"
 
 export function TestimonialsSection() {
   return (
     <section className="py-24 px-6 bg-card">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Нам доверяют игроки</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Что говорят администраторы серверов, организаторы турниров и стримеры о MajesticGuard
-          </p>
-        </div>
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-orbitron">
+          Скачать <span className="text-red-500">MajesticGuard</span>
+        </h2>
+        <p className="text-gray-300 text-lg mb-12 leading-relaxed">
+          Официальная утилита для проверки на читы. Одно нажатие — и вы защищены.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="glow-border slide-up" style={{ animationDelay: `${index * 0.15}s` }}>
-              <CardContent className="p-6">
-                <p className="text-card-foreground mb-6 leading-relaxed italic">"{testimonial.content}"</p>
-                <div className="flex items-center gap-4">
-                  <Avatar>
-                    <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
-                    <AvatarFallback>
-                      {testimonial.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-semibold text-primary">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="bg-[#0d0d0d] border border-white/10 rounded-2xl p-10 flex flex-col items-center gap-6">
+          <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center">
+            <Icon name="ShieldCheck" size={32} className="text-red-500" />
+          </div>
+
+          <div>
+            <p className="text-white font-bold text-lg">MajesticGuard.zip</p>
+            <p className="text-red-400 text-sm mt-1">Windows 10 / 11 · x64</p>
+          </div>
+
+          <Button className="bg-red-500 hover:bg-red-600 text-white font-bold text-base px-10 py-4 h-auto rounded-xl flex items-center gap-2">
+            <Icon name="Download" size={18} />
+            Скачать сейчас
+          </Button>
+
+          <div className="flex items-center gap-2 text-green-400 text-sm">
+            <Icon name="CheckCircle" size={16} />
+            <span>Официальный файл — безопасно</span>
+          </div>
         </div>
       </div>
     </section>
