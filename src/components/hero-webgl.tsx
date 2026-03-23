@@ -115,7 +115,7 @@ const Scene = () => {
 
 export const Hero3DWebGL = () => {
   const titleWords = "MajesticGuard".split(" ")
-  const subtitle = "Программа для проверки на читы для MajesticRP"
+  const subtitle = "Программа для проверки на читы для MajesticRP — честная игра"
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)
   const [delays, setDelays] = useState<number[]>([])
@@ -145,7 +145,7 @@ export const Hero3DWebGL = () => {
         <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
       </div>
 
-      <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
+      <div className="h-screen uppercase items-center w-full absolute z-[60] px-10 flex justify-center flex-col" style={{pointerEvents: 'none'}}>
         <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
           <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
             {titleWords.map((word, index) => (
@@ -172,6 +172,24 @@ export const Hero3DWebGL = () => {
           >
             {subtitle}
           </div>
+        </div>
+        <div
+          className={`mt-8 flex gap-4 ${subtitleVisible ? "fade-in-subtitle" : ""}`}
+          style={{
+            opacity: subtitleVisible ? undefined : 0,
+            pointerEvents: 'auto',
+          }}
+        >
+          <a href="#safety">
+            <button className="bg-red-500 hover:bg-red-600 text-white font-bold font-orbitron px-8 py-3 rounded text-sm transition-colors duration-200">
+              СКАЧАТЬ
+            </button>
+          </a>
+          <a href="#faq">
+            <button className="bg-transparent border-2 border-red-500 text-white hover:bg-red-500/10 font-bold font-orbitron px-8 py-3 rounded text-sm transition-colors duration-200">
+              ПОДРОБНЕЕ
+            </button>
+          </a>
         </div>
       </div>
 
