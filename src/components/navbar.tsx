@@ -26,10 +26,10 @@ export function Navbar() {
                 Возможности
               </a>
               <a href="#safety" className="font-geist text-white hover:text-red-500 transition-colors duration-200">
-                Защита
+                Скачать
               </a>
               <a href="#faq" className="font-geist text-white hover:text-red-500 transition-colors duration-200">
-                Вопросы
+                FAQ
               </a>
             </div>
           </div>
@@ -66,14 +66,14 @@ export function Navbar() {
                 className="block px-3 py-2 font-geist text-white hover:text-red-500 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
-                Защита
+                Скачать
               </a>
               <a
                 href="#faq"
                 className="block px-3 py-2 font-geist text-white hover:text-red-500 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
-                Вопросы
+                FAQ
               </a>
               <div className="px-3 py-2">
                 <Button className="w-full bg-red-500 hover:bg-red-600 text-white font-geist border-0">
