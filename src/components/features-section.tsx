@@ -1,42 +1,43 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Icon from "@/components/ui/icon"
 
 const features = [
   {
-    title: "Детекция читов в реальном времени",
-    description: "Система мгновенно обнаруживает запрещённое ПО, инъекции и модификации памяти без задержек в игре.",
-    icon: "brain",
+    title: "Обнаружение в реальном времени",
+    description: "Мгновенное выявление читов, aimbot, wallhack и других нечестных программ во время игры без задержек.",
+    icon: "Search",
     badge: "Real-time",
   },
   {
-    title: "Защита от обхода",
-    description: "Многоуровневая архитектура не позволяет читерам обойти проверку — даже с использованием спуферов.",
-    icon: "lock",
-    badge: "Anti-bypass",
+    title: "Глубокий анализ памяти",
+    description: "Сканирование оперативной памяти процесса на предмет инъекций, DLL-хуков и манипуляций с игровыми данными.",
+    icon: "ShieldAlert",
+    badge: "Anti-Inject",
   },
   {
-    title: "Лёгкий запуск",
-    description: "Одно нажатие — утилита запускается и работает в фоне, не влияя на производительность системы.",
-    icon: "globe",
-    badge: "Просто",
-  },
-  {
-    title: "ИИ-анализ поведения",
-    description: "Машинное обучение отслеживает подозрительные паттерны действий и автоматически блокирует нарушителей.",
-    icon: "zap",
+    title: "Анализ поведения",
+    description: "ИИ-алгоритмы определяют аномальное поведение игрока — статистику, движения, точность стрельбы.",
+    icon: "Brain",
     badge: "AI",
   },
   {
-    title: "Облачная база данных",
-    description: "Постоянно обновляемая облачная база сигнатур защищает от новых читов сразу после их появления.",
-    icon: "link",
-    badge: "Облако",
+    title: "Защита ядра (Kernel)",
+    description: "Работает на уровне ядра системы — невозможно обойти через стандартные методы обхода античитов.",
+    icon: "Lock",
+    badge: "Ring-0",
   },
   {
-    title: "Совместимость с играми",
-    description: "Поддержка всех популярных игровых платформ и движков — без конфликтов с легитимным ПО.",
-    icon: "target",
-    badge: "Универсал",
+    title: "Быстрая проверка файлов",
+    description: "Проверка игровых файлов и клиента на целостность с верификацией цифровых подписей за секунды.",
+    icon: "Zap",
+    badge: "Быстро",
+  },
+  {
+    title: "Подробные отчёты",
+    description: "Детализированные логи с доказательной базой: скриншоты, дампы памяти, статистика — для разбора нарушений.",
+    icon: "BarChart2",
+    badge: "Репорты",
   },
 ]
 
@@ -60,15 +61,8 @@ export function FeaturesSection() {
             >
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-3xl">
-                    {feature.icon === "brain" && "&#129504;"}
-                    {feature.icon === "lock" && "&#128274;"}
-                    {feature.icon === "globe" && "&#127760;"}
-                    {feature.icon === "zap" && "&#9889;"}
-                    {feature.icon === "link" && "&#128279;"}
-                    {feature.icon === "target" && "&#127919;"}
-                  </span>
-                  <Badge variant="secondary" className="bg-accent text-accent-foreground">
+                  <Icon name={feature.icon} size={32} className="text-white" fallback="Shield" />
+                  <Badge variant="secondary" className="bg-red-500 text-white">
                     {feature.badge}
                   </Badge>
                 </div>
