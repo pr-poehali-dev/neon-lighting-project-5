@@ -2,15 +2,10 @@
 import json
 import os
 import psycopg2
-import hashlib
 
 
 def get_conn():
     return psycopg2.connect(os.environ["DATABASE_URL"])
-
-
-def hash_password(password: str) -> str:
-    return hashlib.sha256(password.encode()).hexdigest()
 
 
 def handler(event: dict, context) -> dict:
@@ -50,10 +45,9 @@ def handler(event: dict, context) -> dict:
             conn.close()
             return {"statusCode": 409, "headers": headers, "body": json.dumps({"error": "Пользователь уже существует"})}
 
-        hashed = hash_password(password)
         cur.execute(
             "INSERT INTO users (username, password) VALUES (%s, %s) RETURNING id",
-            (username, hashed)
+            (username, password)
         )
         user_id = cur.fetchone()[0]
         conn.commit()
@@ -65,8 +59,7 @@ def handler(event: dict, context) -> dict:
         }
 
     elif action == "login":
-        hashed = hash_password(password)
-        cur.execute("SELECT id, username FROM users WHERE username = %s AND password = %s", (username, hashed))
+        cur.execute("SELECT id, username FROM users WHERE username = %s AND password = %s", (username, password))
         row = cur.fetchone()
         conn.close()
         if not row:

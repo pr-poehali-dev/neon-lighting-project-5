@@ -1,10 +1,18 @@
 {
   "tests": [
     {
-      "name": "Login existing user",
+      "name": "Register new user",
       "method": "POST",
       "path": "/",
-      "body": "{\"action\": \"login\", \"username\": \"testuser123\", \"password\": \"testpass\"}",
+      "body": "{\"action\": \"register\", \"username\": \"plaintextuser\", \"password\": \"mypassword\"}",
+      "expectedStatus": 200,
+      "bodyMatcher": "none"
+    },
+    {
+      "name": "Login with plain password",
+      "method": "POST",
+      "path": "/",
+      "body": "{\"action\": \"login\", \"username\": \"plaintextuser\", \"password\": \"mypassword\"}",
       "expectedStatus": 200,
       "bodyMatcher": "none"
     },
@@ -12,7 +20,7 @@
       "name": "Login wrong password",
       "method": "POST",
       "path": "/",
-      "body": "{\"action\": \"login\", \"username\": \"testuser123\", \"password\": \"wrongpass\"}",
+      "body": "{\"action\": \"login\", \"username\": \"plaintextuser\", \"password\": \"wrongpass\"}",
       "expectedStatus": 401,
       "bodyMatcher": "none"
     }
