@@ -180,7 +180,7 @@ export const Hero3DWebGL = () => {
             pointerEvents: 'auto',
           }}
         >
-          <a href="#safety">
+          <a href="https://cdn.poehali.dev/projects/488215cf-3d7d-496a-85b9-9048b3af191f/bucket/d0a8bc6f-fc8b-4d60-9c55-a862bbcd19c6.zip" download>
             <button className="bg-red-500 hover:bg-red-600 text-white font-bold font-orbitron px-8 py-3 rounded text-sm transition-colors duration-200">
               СКАЧАТЬ
             </button>

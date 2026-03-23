@@ -22,10 +22,12 @@ export function TestimonialsSection() {
             <p className="text-red-400 text-sm mt-1">Windows 10 / 11 · x64</p>
           </div>
 
-          <Button className="bg-red-500 hover:bg-red-600 text-white font-bold text-base px-10 py-4 h-auto rounded-xl flex items-center gap-2">
-            <Icon name="Download" size={18} />
-            Скачать сейчас
-          </Button>
+          <a href="https://cdn.poehali.dev/projects/488215cf-3d7d-496a-85b9-9048b3af191f/bucket/d0a8bc6f-fc8b-4d60-9c55-a862bbcd19c6.zip" download>
+            <Button className="bg-red-500 hover:bg-red-600 text-white font-bold text-base px-10 py-4 h-auto rounded-xl flex items-center gap-2">
+              <Icon name="Download" size={18} />
+              Скачать сейчас
+            </Button>
+          </a>
 
           <div className="flex items-center gap-2 text-green-400 text-sm">
             <Icon name="CheckCircle" size={16} />
